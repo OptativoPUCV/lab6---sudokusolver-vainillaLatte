@@ -58,7 +58,7 @@ List* get_adj_nodes(Node* n){
           if(n->sudo[i][j] ==0){
             for(num = 0; num <= 9; num++)
               {
-                node *adyacente=copy(n);
+                Node *adyacente=copy(n);
                 adyacente->sudo[i][j]=num;
                 pushBack(list, adyacente);
               }
