@@ -2,3 +2,24 @@ Thu 04 May 2023 04:35:05 PM UTC:
  tests:  0|5
 total_score: 0/70
 68409ea
+Thu 04 May 2023 04:38:18 PM UTC: 
+ sudoku.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:61:17: error: unknown type name ‘node’; did you mean ‘Node’?
+   61 |                 node *adyacente=copy(n);
+      |                 ^~~~
+      |                 Node
+sudoku.c:61:33: error: initialization of ‘int *’ from incompatible pointer type ‘Node *’ [-Werror=incompatible-pointer-types]
+   61 |                 node *adyacente=copy(n);
+      |                                 ^~~~
+sudoku.c:62:26: error: request for member ‘sudo’ in something not a structure or union
+   62 |                 adyacente->sudo[i][j]=num;
+      |                          ^~
+sudoku.c:70:12: error: returning ‘int’ from a function with return type ‘List *’ makes pointer from integer without a cast [-Werror=int-conversion]
+   70 |     return 1;
+      |            ^
+cc1: all warnings being treated as errors
+Compilation failed
+d50042d
