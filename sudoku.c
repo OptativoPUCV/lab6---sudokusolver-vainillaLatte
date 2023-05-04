@@ -63,7 +63,7 @@ int is_valid(Node* n){
         //printf("%d ",nodo->sudo[i][j]);
         //if(p%3 == 2) printf("\n");
         if(n->sudo[i][j]==n->sudo[0][0])
-          return 0;
+          return 1;
     }
     return 1;
 }
