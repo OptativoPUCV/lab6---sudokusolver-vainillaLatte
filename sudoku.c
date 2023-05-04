@@ -44,28 +44,25 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  for(int i = 0; i < 9; i ++)
-    {
-      if (n->sudo[0][i]==n->sudo[0][0])
+  int num1, num2;
+  for(int i = 0; i < 9; i++){
+    int fila[10]={0,0,0,0,0,0,0,0,0,0};
+    int colum[10]={0,0,0,0,0,0,0,0,0,0};
+    for(int j = 0; j< 9; j++)
       {
-        return 0;
+        num1 = n -> sudo[i][j];
+        if(num1!= 0){
+          if(filas[num1]==0)
+          {
+            filas[num1] = 1;
+          }
+          else{
+            return 0;
+          }
+        }
       }
-    }
-  for(int j = 0; j < 9; j++)
-    {
-      if(n->sudo[j][0]==n->sudo[0][0])
-        return 1;
-    }
-   int k=4,p; 
-    for(p=0;p<9;p++){
-        int i=3*(k/3) + (p/3) ;
-        int j=3*(k%3) + (p%3) ;
-        //printf("%d ",nodo->sudo[i][j]);
-        //if(p%3 == 2) printf("\n");
-        if(n->sudo[i][j]==n->sudo[0][0])
-          return 1;
-    }
-    return 0;
+  }
+  return 1;
 }
 
 
