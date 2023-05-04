@@ -45,10 +45,10 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   int num1;
-  //int num2;
+  int num2;
   for(int i = 0; i < 9; i++){
     int filas[10]={0,0,0,0,0,0,0,0,0,0};
-    //int colum[10]={0,0,0,0,0,0,0,0,0,0};
+    int colum[10]={0,0,0,0,0,0,0,0,0,0};
     for(int j = 0; j< 9; j++)
       {
         num1 = n -> sudo[i][j];
@@ -59,6 +59,15 @@ int is_valid(Node* n){
           }
           else{
             return 0;
+          }
+          num2 = n->sudo[i][j];
+          if(num2!=0){
+            if(colum[num2]==0){
+              colum[num2]=1;
+            }
+            else{
+              return 0;
+            }
           }
         }
       }
