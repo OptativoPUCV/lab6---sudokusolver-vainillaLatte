@@ -99,7 +99,8 @@ List* get_adj_nodes(Node* n){
     List* list=createList();
     int i, j, num;
     for(i=0; i < 9; i++)
-      {for(j=0;j<9;j++)
+      {
+        for(j=0;j<9;j++)
         {
           if(n->sudo[i][j] ==0){
             for(num = 1; num <= 9; num++)
@@ -111,7 +112,6 @@ List* get_adj_nodes(Node* n){
             return list;
           }
         }
-        
       }
     return list;
 }
