@@ -43,48 +43,55 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n) {
-    int num1, num2, num3;
-    for (int i = 0; i < 9; i++) {
-        int filas[10] = {0};
-        int colum[10] = {0};
-        for (int j = 0; j < 9; j++) {
-            num1 = n->sudo[i][j];
-            if (num1 != 0) {
-                if (filas[num1] == 0) {
-                    filas[num1] = 1;
-                } else {
-                    return 0;
-                }
-            }
-            num2 = n->sudo[j][i];
-            if (num2 != 0) {
-                if (colum[num2] == 0) {
-                    colum[num2] = 1;
-                } else {
-                    return 0;
-                }
-            }
+int is_valid(Node* n){
+  int num1;
+  int num2;
+  int num3;
+  for(int i = 0; i < 9; i++){
+    int filas[10]={0,0,0,0,0,0,0,0,0,0};
+    int colum[10]={0,0,0,0,0,0,0,0,0,0};
+    for(int j = 0; j< 9; j++)
+      {
+        num1 = n -> sudo[i][j];
+        if(num1!= 0){
+          if(filas[num1]==0)
+          {
+            filas[num1] = 1;
+          }
+          else{
+            return 0;
+          }
         }
-    }
-    for (int i = 0; i < 9; i += 3) {
-        for (int j = 0; j < 9; j += 3) {
-            int valores[10] = {0};
-            for (int l = i; l < i + 3; l++) {
-                for (int k = j; k < j + 3; k++) {
-                    num3 = n->sudo[l][k];
-                    if (num3 != 0) {
-                        if (valores[num3] == 1) {
-                            return 0;
-                        } else {
-                            valores[num3] = 1;
-                        }
-                    }
-                }
-            }
+      num2 = n->sudo[j][i];
+      if(num2!=0){
+        if(colum[num2]==0){
+          colum[num2]=1;
         }
+        else{
+          return 0;
+          }
+        }
+     }
+  }
+  for(int i = 0; i < 9; i += 3) {
+    for(int j = 0; j < 9; j += 3) {
+      int valores[10] = {0,0,0,0,0,0,0,0,0,0};
+      for(int l = i; l < i + 3; l++) {
+        for(int k = j; k < j + 3; k++) {
+          num3 = n->sudo[l][k];
+          if(num3 != 0){
+            if(valores[num3] == 1){
+              return 0;
+            }
+            else{
+              valores[num3] = 1;
+            }
+          }
+        }
+      }
     }
-    return 1;
+  }
+  return 1;
 }
 
 
