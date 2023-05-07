@@ -108,7 +108,7 @@ List* get_adj_nodes(Node* n) {
                         pushBack(list, adyacente);
                     } else {
                         pushBack(list,adyacente);
-                        popBack(adyacente);  
+                        popBack(list);  
                     }
                 }
                 return list;
